@@ -1,0 +1,18 @@
+{
+    "require": {
+        "php": "^8.0",
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.6",
+        "illuminate/database": "^10.14",
+        "illuminate/pagination": "^10.14",
+        "illuminate/support": "^10.14",
+        "fig/http-message-util": "^1.1",
+        "fakerphp/faker": "^1.23",
+        "vlucas/phpdotenv": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #6366f1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #eff3f8;
+}
+
+header {
+  padding: 0 16px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #dfe7ef;
+  box-shadow: 0 4px 30px rgba(221, 224, 255, .54);
+  position: sticky;
+  top: 0;
+  margin-bottom: 32px;
+  z-index: 100;
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.table__header {
+  display: flex;
+  align-items: center;
+}
+
+.table__header button.p-button {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: auto;
+}
+
+.form-search {
+  flex-grow: 1;
+  max-width: 20rem;
+  margin-right: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dfe7ef;
+  box-shadow: 0 4px 30px rgba(221, 224, 255, .54);
+  margin: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card .p-datatable .p-datatable-header {
+  background: #fff;
+  color: #343a40;
+  border-style: solid;
+  border-color: #dfe7ef;
+  border-width: 0 0 1px 0;
+  padding: 1rem 1rem;
+  font-weight: 700;
+}
+
+.book__controls {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.book__controls .p-button.p-button-icon-only.p-button-rounded {
+  height: 2.3rem;
+  width: 2.3rem;
+}
+
+.p-datatable .p-column-header-content .p-column-title {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.p-datatable .p-column-header-content svg {
+  width: 12px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.form div {
+  margin-bottom: 2px;
+}
+
+.form input {
+  width: 100%;
+}
+
+.form input + small {
+  color: #EF4444;
+  opacity: 0;
+  display: block;
+  min-height: 22px;
+}
+
+.form input.p-invalid + small {
+  opacity: 100%;
+}
+
+.form button {
+  justify-content: center;
+  font-weight: 600;
+}
