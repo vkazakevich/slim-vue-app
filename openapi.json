@@ -1,0 +1,275 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Book Management System",
+        "version": "0.1"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8080"
+        }
+    ],
+    "paths": {
+        "/api/books": {
+            "get": {
+                "tags": [
+                    "books"
+                ],
+                "summary": "Gets a list of books",
+                "operationId": "a9d13283dfab262e97af3c914d51b7a8",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page",
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search phrase text",
+                        "schema": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    },
+                    {
+                        "name": "sortField",
+                        "in": "query",
+                        "description": "Sort by field name",
+                        "schema": {
+                            "type": "string",
+                            "default": "id"
+                        }
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "Sort direction",
+                        "schema": {
+                            "type": "string",
+                            "default": "desc"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "books"
+                ],
+                "summary": "Creates a book",
+                "operationId": "47047e95a700b3271b697e57d0965191",
+                "requestBody": {
+                    "description": "Book's fields",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "author",
+                                    "publication_year",
+                                    "genre"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Clean Code"
+                                    },
+                                    "author": {
+                                        "type": "string",
+                                        "example": "Robert Cecil Martin"
+                                    },
+                                    "publication_year": {
+                                        "type": "integer",
+                                        "example": 2008
+                                    },
+                                    "genre": {
+                                        "type": "string",
+                                        "example": "Computers"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "json"
+                    }
+                }
+            }
+        },
+        "/api/books/{id}": {
+            "get": {
+                "tags": [
+                    "books"
+                ],
+                "summary": "Gets a book",
+                "operationId": "2fdd668eb661591758aff4c56ca9b66a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the book",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "books"
+                ],
+                "summary": "Updates a book",
+                "operationId": "f5ca658c501a803d68655af0365e3802",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the book",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Book's fields",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "author",
+                                    "publication_year",
+                                    "genre"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "string",
+                                        "example": "Clean Code"
+                                    },
+                                    "author": {
+                                        "type": "string",
+                                        "example": "Robert Cecil Martin"
+                                    },
+                                    "publication_year": {
+                                        "type": "integer",
+                                        "example": 2008
+                                    },
+                                    "genre": {
+                                        "type": "string",
+                                        "example": "Computers"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "json"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "books"
+                ],
+                "summary": "Deletes a book",
+                "operationId": "1a9c26667c32b8ed5e5770d7a1cc9d5c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id of the book",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "json"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Book": {
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "readOnly": "true",
+                        "example": "1"
+                    },
+                    "title": {
+                        "description": "Book title",
+                        "type": "string",
+                        "readOnly": "true",
+                        "example": "Clean Code"
+                    },
+                    "author": {
+                        "description": "Book title",
+                        "type": "string",
+                        "readOnly": "true",
+                        "example": "Robert Cecil Martin"
+                    },
+                    "publication_year": {
+                        "description": "Book title",
+                        "type": "integer",
+                        "readOnly": "true",
+                        "example": 2008
+                    },
+                    "genre": {
+                        "description": "Genre of book",
+                        "type": "string",
+                        "readOnly": "true",
+                        "example": "Computers"
+                    },
+                    "created_at": {
+                        "description": "Initial creation timestamp",
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": "true"
+                    },
+                    "updated_at": {
+                        "description": "Last update timestamp",
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": "true"
+                    },
+                    "deleted_at": {
+                        "description": "Soft delete timestamp",
+                        "type": "string",
+                        "format": "date-time",
+                        "readOnly": "true"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

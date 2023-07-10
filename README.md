@@ -32,3 +32,7 @@ make populate_database
 To stop or start the container, use `make up` and `make down`.
 
 The project is accessible by `localhost:8080` host.
+
+## Postman
+
+For your convenience, this repository has a [OpenAPI Specification](./openapi.json) that can be imported into Postman ([more details](https://learning.postman.com/docs/integrations/available-integrations/working-with-openAPI/)).

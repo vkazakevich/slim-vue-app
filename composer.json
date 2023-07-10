@@ -8,7 +8,8 @@
         "illuminate/support": "^10.14",
         "fig/http-message-util": "^1.1",
         "fakerphp/faker": "^1.23",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "zircote/swagger-php": "^4.7"
     },
     "autoload": {
         "psr-4": {
