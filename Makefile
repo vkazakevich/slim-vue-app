@@ -16,7 +16,7 @@ composer-install:
 	@make exec cmd="composer install"
 
 create-database:
-	@make exec cmd="php bin/create_tables.php"
+	@make exec cmd="php bin/create_database.php"
 
 populate-database:
 	@make exec cmd="php bin/populate_database_with_fake_records.php"

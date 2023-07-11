@@ -58,7 +58,7 @@
         :style="{ width: '50vw' }"
     >
       <template v-if="addOrEditDialog">
-        <BookForm :book="selectedBook" @updated="onUpdated" @created="onCreated"/>
+        <BookForm :book="selectedBook" @updated="onUpdated" @created="onCreated" @error="onError"/>
       </template>
     </Dialog>
   </div>
@@ -158,6 +158,15 @@ export default {
     onCreated () {
       this.successToast('The book was created')
       this.fetchItems()
+    },
+
+    onError (message) {
+      this.$toast.add({
+        severity: 'error',
+        summary: 'Unsuccessful',
+        life: 3000,
+        detail: message
+      })
     },
 
     successToast (detail) {

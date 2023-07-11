@@ -1,19 +1,26 @@
 <template>
   <form @submit.prevent="submitForm" class="form">
     <div>
-      <InputText v-model="form.title" placeholder="Title"/>
+      <InputText v-model="form.title" placeholder="Title" required/>
       <small></small>
     </div>
     <div>
-      <InputText v-model="form.author" placeholder="Author"/>
+      <InputText v-model="form.author" placeholder="Author" required/>
       <small></small>
     </div>
     <div>
-      <InputText v-model="form.publication_year" placeholder="Publication year"/>
+      <InputText
+          v-model="form.publication_year"
+          type="number"
+          placeholder="Publication year"
+          :min="1901"
+          :max="2023"
+          required
+      />
       <small></small>
     </div>
     <div>
-      <InputText v-model="form.genre" placeholder="Genre"/>
+      <InputText v-model="form.genre" placeholder="Genre" required/>
       <small></small>
     </div>
 
@@ -48,26 +55,33 @@ export default {
         this.updateBook(this.book)
         return
       }
-
       this.createBook()
-      this.reset()
     },
 
     async createBook () {
-      await this.createItem(this.form)
-      this.$emit('created')
+      try {
+        await this.createItem(this.form)
+        this.$emit('created')
+        this.reset()
+      } catch (e) {
+        this.$emit('error', e.message)
+      }
     },
 
     async updateBook ({ id }) {
-      await this.editItem(this.form, id)
-      this.$emit('updated')
+      try {
+        await this.editItem(this.form, id)
+        this.$emit('updated')
+      } catch (e) {
+        this.$emit('error', e.message)
+      }
     },
 
     reset () {
       this.form = Object.assign({}, {
         'title': '',
         'author': '',
-        'publication_year': '',
+        'publication_year': 2023,
         'genre': ''
       })
     }
