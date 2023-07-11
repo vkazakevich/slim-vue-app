@@ -38,9 +38,9 @@
 
     <Dialog
         v-model:visible="deleteBookDialog"
-        :style="{width: '450px'}"
         header="Confirm"
-        :modal="true"
+        modal
+        :style="{ width: '100%', maxWidth: '450px' }"
     >
       <div class="confirmation-content">
         Are you sure you want to delete <strong>{{ selectedBook ? selectedBook.title : '' }}</strong>?
@@ -55,7 +55,7 @@
         v-model:visible="addOrEditDialog"
         modal
         :header="selectedBook ? 'Edit Book' : 'Add Book'"
-        :style="{ width: '50vw' }"
+        :style="{ width: '100%', maxWidth: '450px' }"
     >
       <template v-if="addOrEditDialog">
         <BookForm :book="selectedBook" @updated="onUpdated" @created="onCreated" @error="onError"/>
