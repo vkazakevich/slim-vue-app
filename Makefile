@@ -3,7 +3,7 @@ php_service=book_ms_php
 build:
 	@docker-compose up -d --build
 
-up:
+start:
 	@docker-compose up -d
 
 stop:

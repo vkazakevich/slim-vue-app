@@ -29,7 +29,7 @@ To populate the database with fake values, use the following command:
 make populate-database
 ```
 
-To stop or start the container, use `make up` and `make down`.
+To stop or start the container, use `make start` and `make stop`.
 
 The project is accessible by `localhost:8080` host.
 
