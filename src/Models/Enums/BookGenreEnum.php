@@ -37,8 +37,8 @@ enum BookGenreEnum: string
 
     public static function randomValue(): string
     {
-        $arr = array_column(self::cases(), 'value');
+        $values = array_column(self::cases(), 'value');
 
-        return $arr[array_rand($arr)];
+        return $values[array_rand($values)];
     }
 }
