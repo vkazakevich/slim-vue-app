@@ -4,6 +4,7 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../bootstrap/app.php';
 
 use App\Models\Book;
+use App\Models\Enums\BookGenreEnum;
 use Illuminate\Support\Facades\Date;
 
 echo 'GENERATE FAKE BOOKS START' . PHP_EOL;
@@ -19,7 +20,7 @@ for ($i = 0; $i < 100; $i++) {
         'title' => substr($sentence, 0, strlen($sentence) - 1),
         'author' => $faker->name,
         'publication_year' => (int)$faker->year,
-        'genre' => $faker->title,
+        'genre' => BookGenreEnum::randomValue(),
 
         'created_at' => $now,
         'updated_at' => $now
