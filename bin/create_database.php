@@ -19,6 +19,8 @@ Capsule::schema()->create('books', function (Blueprint $table) {
 
     $table->timestamps();
     $table->softDeletes();
+
+    $table->unique(['title', 'author']);
 });
 
 echo 'DATABASE CREATE COMPLETED' . PHP_EOL;
