@@ -24,7 +24,11 @@ class Book extends Model
 {
     use SoftDeletes;
 
-    /** @var int */
+    /**
+     * The number of models to return for pagination.
+     *
+     * @var int
+     */
     protected $perPage = 10;
 
     /** @var array */
