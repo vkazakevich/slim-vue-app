@@ -26,7 +26,7 @@ make create-database
 To populate the database with fake values, use the following command:
 
 ```bash
-make populate_database
+make populate-database
 ```
 
 To stop or start the container, use `make up` and `make down`.

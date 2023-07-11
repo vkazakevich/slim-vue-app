@@ -18,6 +18,6 @@ composer-install:
 create-database:
 	@make exec cmd="php bin/create_tables.php"
 
-populate_database:
+populate-database:
 	@make exec cmd="php bin/populate_database_with_fake_records.php"
 
